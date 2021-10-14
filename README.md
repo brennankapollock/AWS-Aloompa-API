@@ -61,7 +61,7 @@ git clone https://github.com/brennankapollock/AWS-Aloompa-API
 npm install
 ```
 
-3. Start local environment
+3. Start local environment w/ serverless-offline
 
 ```sh
 npm run start
@@ -71,7 +71,11 @@ npm run start
 
 ## Usage
 
-Queries: 
+### Queries: 
+
+
+
+##### To get all apps 
 
 ```
 query getAllApps {
@@ -82,6 +86,8 @@ query getAllApps {
 }
 
 ```
+
+##### To get all stages
 ```
 query getAllStages {
   stages {
@@ -91,6 +97,7 @@ query getAllStages {
 }
 ```
 
+##### To get all events
 ```
 query getAllEvents {
   events {
@@ -106,7 +113,7 @@ query getAllEvents {
 }
 
 ```
-
+##### To get one stage by passing in a stage id(as a string type)
 ```
 query getOneStage {
   stage(id: "a4087686-ee6c-49d8-a4f0-d67f5931df3a") {
@@ -115,7 +122,7 @@ query getOneStage {
   }
 }
 ```
-
+##### To get one event by passing in an event id(as a string type)
 ```
 query getOneEvent {
   event(id: "b4781407-da92-475e-8d87-596aee0d7f2d") {
@@ -131,7 +138,7 @@ query getOneEvent {
 }
 
 ```
-
+##### To get a stage via it's name
 ```
 query getStageViaName {
   stageViaName(name: "Tizzle Stage") {
@@ -141,7 +148,7 @@ query getStageViaName {
 }
 
 ```
-
+##### To get an event via it's name
 ```
 query getEventViaName {
   eventViaName(name: "Kanye West") {
@@ -157,7 +164,7 @@ query getEventViaName {
 }
 
 ```
-
+##### To get all events happening at a stage via a stage id(as a string type)
 ```
 query getEventsViaStageId {
   allEventsViaStage(id:"a4087686-ee6c-49d8-a4f0-d67f5931df3a") {
@@ -173,7 +180,7 @@ query getEventsViaStageId {
 }
 
 ```
-
+##### To get the stage a particular event is happening at via a stage id(as a string type)
 ```
 query getStageInEvent {
   stageViaEvent(id: "a4087686-ee6c-49d8-a4f0-d67f5931df3a") {
@@ -182,7 +189,7 @@ query getStageInEvent {
   }
 }
 ```
-
+##### To get events that occur between to times(both arguments as string types)
 ```
 query getEventViaTime {
   eventsViaTime(startsAt: "1577916000", endsAt: "1577919600") {
@@ -199,7 +206,9 @@ query getEventViaTime {
 
 ```
 
-Mutations: 
+###Mutations: 
+
+##### To add a stage by passing in a new stage name
 
 ```
 mutation addStage {
@@ -209,7 +218,7 @@ mutation addStage {
   }
 }
 ```
-
+##### To add an event by passing in all required fields that make an event type(times must be of integer type)
 ```
 mutation addEvent {
   addEvent(name: "Andre-3000", description: "ATL's Greatest", image: "http://andre3000.com/headshot", startsAt: 1577916000, endsAt: 1577923200) {
@@ -224,19 +233,19 @@ mutation addEvent {
   }
 }
 ```
-
+##### To delete a stage by passing in the corresponding stage id(as a string type)
 ```
 mutation deleteStage {
   deleteStage(id: "a6bb97dc-224c-4f8f-9af7-fd8b5731840f")
 }
 ```
-
+##### To delete an event by passing in the corresponding event id(as a string type)
 ```
 mutation deleteEvent {
   deleteEvent(id: "d4cec773-c287-4efe-aca5-4274accb6656")
 }
 ```
-
+##### To update a stage by passing in the stage id and name(both as string types)
 ```
 mutation  updateStage {
   updateStage(id: "a6bb97dc-224c-4f8f-9af7-fd8b5731840f", name: "Updated Stage"){
@@ -246,7 +255,7 @@ mutation  updateStage {
 }
 
 ```
-
+##### To update an event by passing in the event id and desired fields to update
 ```
 mutation updateEvent {
   updateEvent(id: "b4781407-da92-475e-8d87-596aee0d7f2d" name: "Ye", description: "He thinks of himself as god.") {
@@ -261,5 +270,7 @@ mutation updateEvent {
   }
 }
 ```
+
+### If you have any questions please reach out! Hope you enjoy the API!
 
 

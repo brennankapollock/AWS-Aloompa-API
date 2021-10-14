@@ -21,7 +21,7 @@ I created this API for a take home project given by [Aloompa](https://aloompa.co
 
 ## Built With
 
-Node.js | Express | GraphQL | Apollo Server | Serverless | AWS
+Node.js | GraphQL | Apollo Server | Serverless | AWS
 
 ## Getting Started
 

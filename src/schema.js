@@ -1,6 +1,6 @@
 const { gql } = require("apollo-server-lambda");
 
-// Schema defining the "shape" of my grpah the queries will be executed against
+// Schema defining the "shape" of my grpah the queries will be executed against.
 module.exports.typeDefs = gql`
   # App Object
   type App {
@@ -38,9 +38,9 @@ module.exports.typeDefs = gql`
     stageViaEvent(id: ID!): Stage
     eventsViaTime(startsAt: String!, endsAt: String!): [Event]
   }
-
+  # "Mutation" lists all the available mutations that clients can execute along with the return type of each.
   type Mutation {
-    addStage(name: String!): Stage
+    addStage(name: String!): [Stage]
     addEvent(
       id: ID
       appId: ID
@@ -50,9 +50,9 @@ module.exports.typeDefs = gql`
       image: String!
       startsAt: Int!
       endsAt: Int!
-    ): Event
-    deleteStage(id: ID!): String
-    deleteEvent(id: ID!): String
+    ): [Event]
+    deleteStage(id: ID!): [Stage]
+    deleteEvent(id: ID!): [Event]
     updateStage(id: ID!, name: String!): Stage
     updateEvent(
       id: ID!

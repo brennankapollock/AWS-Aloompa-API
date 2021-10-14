@@ -1,7 +1,7 @@
 {
   "name": "awsaloompaapi",
   "version": "1.0.0",
-  "description": "",
+  "description": "aws aloompa api made with graphql, apollo-server, and serverless.",
   "main": "index.js",
   "scripts": {
     "start": "sls offline"

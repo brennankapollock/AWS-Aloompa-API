@@ -1,4 +1,4 @@
-const data = require("./db");
+const data = require("./db.json");
 
 const { v4: uuidv4 } = require("uuid");
 
@@ -40,7 +40,7 @@ module.exports.resolvers = {
     addStage(_, args) {
       let newStage = { id: uuidv4(), name: args.name };
       data.stages.push(newStage);
-      return newStage;
+      return data.stages;
     },
     addEvent(_, args) {
       let newEvent = {
@@ -54,7 +54,7 @@ module.exports.resolvers = {
         endsAt: args.endsAt,
       };
       data.events.push(newEvent);
-      return newEvent;
+      return data.events;
     },
 
     updateStage(_, args) {
@@ -91,13 +91,17 @@ module.exports.resolvers = {
 
     deleteStage(_, args) {
       let foundStage = data.stages.findIndex((stage) => stage.id === args.id);
-      data.apps.splice(foundStage, 1);
-      return `You successfully deleted the stage!`;
+      if (foundStage > -1) {
+        const element = data.stages.splice(foundStage, 1)[0];
+        return data.stages;
+      }
     },
     deleteEvent(_, args) {
       let foundEvent = data.events.findIndex((event) => event.id === args.id);
-      data.apps.splice(foundEvent, 1);
-      return `You successfully deleted the event!`;
+      if (foundEvent > -1) {
+        const element = data.events.splice(foundEvent, 1)[0];
+        return data.events;
+      }
     },
   },
 };

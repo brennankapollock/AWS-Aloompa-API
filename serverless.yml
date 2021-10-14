@@ -1,0 +1,20 @@
+service: aws-aloompa-api # service name
+
+provider:
+  name: aws # deploy to AWS
+  runtime: nodejs12.x
+  stage: ${opt:stage, 'dev'}
+  region: us-east-1 # AWS region
+  memorySize: 128
+
+functions:
+  graphql:
+    handler: src/server.graphqlHandler # Lambda handler path
+    events:
+      - http:
+          path: graphql # define Lambda endpoint
+          method: ANY # any HTTP method can access this Lambda
+          cors: true # enable CORS
+
+plugins:
+  - serverless-offline

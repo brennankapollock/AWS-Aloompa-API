@@ -45,7 +45,7 @@ npm install -g serverless
 
 Now that you're all updated follow along below:
 
-You can find a live demo of the API via [this link](https://cbms1c34rj.execute-api.us-east-1.amazonaws.com/dev/graphql) that allows you to make queries and mutations using Apollo's playground.
+You can find a live demo of the API via [this link](https://56fuqte4bd.execute-api.us-east-1.amazonaws.com/dev/graphql) that allows you to make queries and mutations using Apollo's playground.
 
 You can also fork and clone this repo to build on or use as scaffolding for your own API by:
 

@@ -16,7 +16,7 @@
 ![Screen Shot](images/Apollo-Shot.png)
 
 
-I created this API for a take home project given by [Aloompa](https://aloompa.com/) and enjoyed every second of it. As you scroll down you'll find all the details you need to being playing around with it. Do know that there is no database integrated and it's only executing against a static JSON file. You may not see your mutations persist because of this. With that being said: enjoy!
+I created this API for a take home project given by [Aloompa](https://aloompa.com/) and enjoyed every second of it. As you scroll down you'll find all the details you need to begin playing around with it. Do know that there is no database integrated and it's only executing against a static JSON file. You may not see your mutations persist because of this. With that being said: enjoy!
 
 
 ## Built With

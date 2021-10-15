@@ -206,7 +206,7 @@ query getEventViaTime {
 
 ```
 
-###Mutations: 
+### Mutations: 
 
 ##### To add a stage by passing in a new stage name
 
